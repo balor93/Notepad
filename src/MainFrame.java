@@ -26,83 +26,146 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToolBar1 = new javax.swing.JToolBar();
+        jDialog1 = new javax.swing.JDialog();
+        TextFieldDialog1 = new javax.swing.JTextField();
+        TextFieldDialog2 = new javax.swing.JTextField();
+        SeparatorDialog = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jToolBar1 = new javax.swing.JToolBar();
+        btnSave = new javax.swing.JButton();
+        btnOpen = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TextArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        MenuFile = new javax.swing.JMenu();
+        MenuNew = new javax.swing.JMenuItem();
+        MenuOpen = new javax.swing.JMenuItem();
+        MenuSave = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        MenuExit = new javax.swing.JMenuItem();
+        MenuEdit = new javax.swing.JMenu();
+        MenuAbout = new javax.swing.JMenu();
+
+        TextFieldDialog1.setText("This program is an exercises for programming subject.");
+
+        TextFieldDialog2.setText("IES El Caminas.");
+
+        jButton1.setText("OK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SeparatorDialog, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(TextFieldDialog1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(TextFieldDialog2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialog1Layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(jButton1)))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(TextFieldDialog1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextFieldDialog2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(SeparatorDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(36, 36, 36))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToolBar1.setRollover(true);
 
-        jButton1.setText("Save");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
+        btnSave.setText("Save");
+        btnSave.setFocusable(false);
+        btnSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSave.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnSave);
 
-        jButton2.setText("Open");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
+        btnOpen.setText("Open");
+        btnOpen.setFocusable(false);
+        btnOpen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnOpen.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnOpen);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        TextArea.setColumns(20);
+        TextArea.setRows(5);
+        jScrollPane1.setViewportView(TextArea);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_END);
 
-        jMenu1.setText("File");
+        MenuFile.setText("File");
 
-        jMenuItem1.setText("New");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        MenuNew.setText("New");
+        MenuNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                MenuNewActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        MenuFile.add(MenuNew);
 
-        jMenuItem2.setText("Open File");
-        jMenu1.add(jMenuItem2);
+        MenuOpen.setText("Open File");
+        MenuFile.add(MenuOpen);
 
-        jMenuItem3.setText("Save");
-        jMenu1.add(jMenuItem3);
+        MenuSave.setText("Save");
+        MenuFile.add(MenuSave);
+        MenuFile.add(jSeparator1);
 
-        jMenuItem4.setText("Exit");
-        jMenu1.add(jMenuItem4);
+        MenuExit.setText("Exit");
+        MenuFile.add(MenuExit);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(MenuFile);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        MenuEdit.setText("Edit");
+        jMenuBar1.add(MenuEdit);
 
-        jMenu3.setText("About");
-        jMenuBar1.add(jMenu3);
+        MenuAbout.setText("About");
+        MenuAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuAboutActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(MenuAbout);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void MenuNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuNewActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_MenuNewActionPerformed
+
+    private void MenuAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAboutActionPerformed
+        jDialog1.setVisible(true);
+    }//GEN-LAST:event_MenuAboutActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,19 +203,25 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenu MenuEdit;
+    private javax.swing.JMenuItem MenuExit;
+    private javax.swing.JMenu MenuFile;
+    private javax.swing.JMenuItem MenuNew;
+    private javax.swing.JMenuItem MenuOpen;
+    private javax.swing.JMenuItem MenuSave;
+    private javax.swing.JSeparator SeparatorDialog;
+    private javax.swing.JTextArea TextArea;
+    private javax.swing.JTextField TextFieldDialog1;
+    private javax.swing.JTextField TextFieldDialog2;
+    private javax.swing.JButton btnOpen;
+    private javax.swing.JButton btnSave;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

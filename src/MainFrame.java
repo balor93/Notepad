@@ -88,6 +88,11 @@ public class MainFrame extends javax.swing.JFrame {
         MenuFile.add(jSeparator1);
 
         MenuExit.setText("Exit");
+        MenuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuExitActionPerformed(evt);
+            }
+        });
         MenuFile.add(MenuExit);
 
         jMenuBar1.add(MenuFile);
@@ -129,6 +134,10 @@ public class MainFrame extends javax.swing.JFrame {
         JDialog dialog = new JDialog(this,true);
         dialog.setVisible(true);
     }//GEN-LAST:event_jMenuAboutActionPerformed
+
+    private void MenuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuExitActionPerformed
+        dispose();
+    }//GEN-LAST:event_MenuExitActionPerformed
 
     /**
      * @param args the command line arguments

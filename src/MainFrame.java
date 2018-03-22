@@ -55,6 +55,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuAbout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(750, 700));
 
         jToolBar1.setRollover(true);
 
@@ -88,7 +89,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Notepad");
         getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_END);
 
         MenuFile.setText("File");

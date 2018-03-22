@@ -1,3 +1,14 @@
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -51,12 +62,22 @@ public class MainFrame extends javax.swing.JFrame {
         btnSave.setFocusable(false);
         btnSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSave.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btnSave);
 
         btnOpen.setText("Open");
         btnOpen.setFocusable(false);
         btnOpen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnOpen.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnOpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpenActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btnOpen);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
@@ -81,9 +102,19 @@ public class MainFrame extends javax.swing.JFrame {
         MenuFile.add(MenuNew);
 
         MenuOpen.setText("Open File");
+        MenuOpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuOpenActionPerformed(evt);
+            }
+        });
         MenuFile.add(MenuOpen);
 
         MenuSave.setText("Save");
+        MenuSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSaveActionPerformed(evt);
+            }
+        });
         MenuFile.add(MenuSave);
         MenuFile.add(jSeparator1);
 
@@ -123,7 +154,7 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuNewActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_MenuNewActionPerformed
 
     private void MenuAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAboutActionPerformed
@@ -138,6 +169,127 @@ public class MainFrame extends javax.swing.JFrame {
     private void MenuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuExitActionPerformed
         dispose();
     }//GEN-LAST:event_MenuExitActionPerformed
+
+    private void MenuOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuOpenActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showOpenDialog(TextArea);
+        BufferedReader input = null;
+
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File fichero = fileChooser.getSelectedFile();
+
+            // open and read the file
+            try {
+
+                input = new BufferedReader(new FileReader(fichero));
+
+                String line;
+                StringBuilder contenidoFichero = new StringBuilder();
+
+                while ((line = input.readLine()) != null) {
+                    contenidoFichero.append(line);
+                }
+
+                // Pone el contenido del fichero en el area de texto
+                TextArea.setText(contenidoFichero.toString());
+
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_MenuOpenActionPerformed
+
+    private void btnOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpenActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showOpenDialog(TextArea);
+        BufferedReader input = null;
+
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File fichero = fileChooser.getSelectedFile();
+
+            // open and read the file
+            try {
+
+                input = new BufferedReader(new FileReader(fichero));
+
+                String line;
+                StringBuilder contenidoFichero = new StringBuilder();
+
+                while ((line = input.readLine()) != null) {
+                    contenidoFichero.append(line);
+                }
+
+                // Pone el contenido del fichero en el area de texto
+                TextArea.setText(contenidoFichero.toString());
+
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnOpenActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showSaveDialog(TextArea);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File fichero = fileChooser.getSelectedFile();
+
+            FileWriter output = null;
+            try {
+                output = new FileWriter(fichero);
+                output.write(TextArea.getText());
+                
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+
+            }finally{
+                if(output!=null){
+                    try {
+                        output.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void MenuSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSaveActionPerformed
+       JFileChooser fileChooser = new JFileChooser();
+        int seleccion = fileChooser.showSaveDialog(TextArea);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File fichero = fileChooser.getSelectedFile();
+
+            FileWriter output = null;
+            try {
+                output = new FileWriter(fichero);
+                output.write(TextArea.getText());
+                
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+
+            }finally{
+                if(output!=null){
+                    try {
+                        output.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+
+        }
+    
+    }//GEN-LAST:event_MenuSaveActionPerformed
 
     /**
      * @param args the command line arguments

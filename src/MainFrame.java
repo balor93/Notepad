@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55,10 +56,22 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuAbout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(750, 700));
 
         jToolBar1.setRollover(true);
 
+        btnSave.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/home/INFORMATICA/alu20909379x/Escriptori/Programacion/graphics repository/jlfgr-1_0/toolbarButtonGraphics/general/Save16.gif")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
         btnSave.setText("Save");
         btnSave.setFocusable(false);
         btnSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -70,6 +83,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jToolBar1.add(btnSave);
 
+        btnOpen.setIcon(new javax.swing.ImageIcon("/home/INFORMATICA/alu20909379x/Escriptori/Programacion/graphics repository/jlfgr-1_0/toolbarButtonGraphics/general/Open16.gif")); // NOI18N
         btnOpen.setText("Open");
         btnOpen.setFocusable(false);
         btnOpen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -94,6 +108,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         MenuFile.setText("File");
 
+        MenuNew.setIcon(new javax.swing.ImageIcon("/home/INFORMATICA/alu20909379x/Escriptori/Programacion/graphics repository/jlfgr-1_0/toolbarButtonGraphics/general/New24.gif")); // NOI18N
         MenuNew.setText("New");
         MenuNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +117,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         MenuFile.add(MenuNew);
 
+        MenuOpen.setIcon(new javax.swing.ImageIcon("/home/INFORMATICA/alu20909379x/Escriptori/Programacion/graphics repository/jlfgr-1_0/toolbarButtonGraphics/general/Open24.gif")); // NOI18N
         MenuOpen.setText("Open File");
         MenuOpen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,6 +126,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         MenuFile.add(MenuOpen);
 
+        MenuSave.setIcon(new javax.swing.ImageIcon("/home/INFORMATICA/alu20909379x/Escriptori/Programacion/graphics repository/jlfgr-1_0/toolbarButtonGraphics/general/SaveAll24.gif")); // NOI18N
         MenuSave.setText("Save");
         MenuSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +156,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jMenuAbout.setIcon(new javax.swing.ImageIcon("/home/INFORMATICA/alu20909379x/Escriptori/Programacion/graphics repository/jlfgr-1_0/toolbarButtonGraphics/general/Help24.gif")); // NOI18N
         jMenuAbout.setText("About...");
         jMenuAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
